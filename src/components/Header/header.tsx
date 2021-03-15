@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './header.scss';
-import { api } from '../../services/api';
 
 interface HeaderPropTypes {
     greeting: string,
@@ -10,19 +9,6 @@ interface HeaderPropTypes {
 export const Header: React.FC<HeaderPropTypes> = (props) => {
 
     const { greeting, cool } = props;
-
-    const getData = async () => {
-        try {
-            const responce = await api.GET('todos');
-            console.log(responce)
-        } catch (e) {
-
-        }
-    }
-
-    useEffect(() => {
-        getData();
-    }, []);
  
     return(
         <header>
