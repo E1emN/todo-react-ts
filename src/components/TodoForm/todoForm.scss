@@ -1,0 +1,33 @@
+@import '../../assests/styles/mixins.scss';
+
+.todo-form {
+    @include main;
+    margin-top: 20px;
+    &__container {
+        @include container;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__form {
+        width: 100%;
+        display: flex;
+        input {
+            padding-left: 20px;
+            height: 30px;
+            width: calc(100% - 96px);
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            border: 1px solid #1675e0;
+        }
+        button {
+            width: 70px;
+            height: 34px;
+            border: none;
+            background: #1675e0;
+            color: #fff;
+            font-weight: bold;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+}
