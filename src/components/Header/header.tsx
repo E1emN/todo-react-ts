@@ -1,18 +1,19 @@
 import React from 'react';
 import './header.scss';
 
-interface HeaderPropTypes {
-    greeting: string,
-    cool: number
-}
-
-export const Header: React.FC<HeaderPropTypes> = (props) => {
-
-    const { greeting, cool } = props;
+export const Header: React.FC = () => {
  
     return(
-        <header>
-            {greeting} {cool}
+        <header className="header">
+            <div className="header__container">
+                <h2 className="header__title">
+                    Todo
+                </h2>
+                <ul className="header__nav">
+                    <li>Main</li>
+                    <li>Information</li>
+                </ul>
+            </div>
         </header>
     )
 };

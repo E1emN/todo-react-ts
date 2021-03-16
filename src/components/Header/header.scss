@@ -1,0 +1,25 @@
+@import '../../assests/styles/mixins.scss';
+
+.header {
+    @include main;
+    background: #1675e0;
+    &__container {
+        @include container;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        color: #fff;
+        font-size: 25px;
+    }
+    &__nav {
+        list-style: none;
+        li {
+            display: inline-block;
+            color: #fff;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
+}
