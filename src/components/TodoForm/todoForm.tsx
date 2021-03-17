@@ -1,6 +1,9 @@
 import React from 'react';
 import './todoForm.scss';
 import { useFormik } from 'formik';
+import { $todos, addTodo } from '../../store/todo';
+import { useStore } from 'effector-react';
+import { nanoid } from 'nanoid';
 
 interface IFormValues {
     todo: string
@@ -8,12 +11,18 @@ interface IFormValues {
 
 export const TodoForm: React.FC = () => {
 
+    const todos = useStore($todos);
+    console.log(todos);
     const formik = useFormik<IFormValues>({
         initialValues: {
             todo: ''
         },
         onSubmit: (values: IFormValues) => {
-            console.log(values.todo);
+            addTodo({
+                todo: values.todo,
+                id: nanoid(),
+                isComplited: false
+            })
             formik.resetForm();
         }
     });
