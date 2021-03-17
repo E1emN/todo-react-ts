@@ -1,7 +1,7 @@
 import { createStore, createApi } from 'effector';
 import { ITodo } from '../interfaces/todo';
 
-export const $todos = createStore<ITodo[]>([]);
+export const $todos = createStore<ITodo[]>(JSON.parse(localStorage.getItem('todos')) || []);
 
 export const { addTodo, compliteTodo, deleteTodo } = createApi($todos, {
     addTodo: (todos, newTodo: ITodo) => [...todos, newTodo],

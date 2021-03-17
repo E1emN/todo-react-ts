@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './todoList.scss';
 import closeIcon from '../../assests/icons/close.svg';
 import checkmarkIcon from '../../assests/icons/check-mark.svg';
@@ -9,6 +9,10 @@ import { ITodo } from '../../interfaces/todo';
 export const TodoList: React.FC = () => {
 
     const todos = useStore($todos);
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [todos]);
 
     return(
         <div className="todo-list">
