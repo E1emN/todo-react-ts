@@ -1,0 +1,58 @@
+@import '../../assests/styles/mixins.scss';
+
+.todo-list {
+    @include main;
+    margin-top: 40px;
+    &__container {
+        @include container;
+    }
+    &__list {
+        list-style: none;
+        width: 100%;
+        li {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        &-check {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #1675e0;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+            img {
+                display: none;
+                width: 15px;
+                object-fit: cover;
+            }
+            &_checked {
+                img {
+                    display: block;
+                }
+            }
+        }
+        &-text {
+            font-size: 18px;
+            overflow: hidden;
+            overflow-wrap: break-word;
+            width: calc(100% - 70px);
+            &_complited {
+                text-decoration: line-through;
+                color: #8a919c;
+            }
+        }
+        &-delete {
+            width: 20px;
+            object-fit: cover;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+        }
+    }
+}

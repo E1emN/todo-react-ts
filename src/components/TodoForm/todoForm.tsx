@@ -1,8 +1,7 @@
 import React from 'react';
 import './todoForm.scss';
 import { useFormik } from 'formik';
-import { $todos, addTodo } from '../../store/todo';
-import { useStore } from 'effector-react';
+import { addTodo } from '../../store/todo';
 import { nanoid } from 'nanoid';
 
 interface IFormValues {
@@ -11,8 +10,6 @@ interface IFormValues {
 
 export const TodoForm: React.FC = () => {
 
-    const todos = useStore($todos);
-    console.log(todos);
     const formik = useFormik<IFormValues>({
         initialValues: {
             todo: ''
