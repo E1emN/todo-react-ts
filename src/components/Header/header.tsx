@@ -9,10 +9,6 @@ export const Header: React.FC = () => {
                 <h2 className="header__title">
                     Todo
                 </h2>
-                <ul className="header__nav">
-                    <li>Main</li>
-                    <li>Information</li>
-                </ul>
             </div>
         </header>
     )
